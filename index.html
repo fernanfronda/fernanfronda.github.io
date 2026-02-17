@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fernan Joey D. Fronda | Entry-Level Web Designer</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --card:#ffffff;
+      --shadow: 0 10px 30px rgba(17,24,39,.08);
+      --radius: 16px;
+      --max: 980px;
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a{ color: inherit; }
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    /* Top bar */
+    .top{
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 12px;
+      padding: 10px 0 26px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .name{
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .role{
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .nav{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a{
+      text-decoration: none;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+    .nav a:hover{ color: var(--text); }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 20px;
+    }
+    .heroCard{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .hero h1{
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+    }
+    .subtitle{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .ctaRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #f9fafb;
+    }
+    .btnPrimary{
+      background: var(--text);
+      color: white;
+      border-color: var(--text);
+    }
+
+    /* Quick info */
+    .infoList{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      height: 100%;
+    }
+    .infoItem{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #ffffff;
+    }
+    .infoLabel{
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 2px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+    }
+    .infoValue{
+      font-size: 14px;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    /* Sections */
+    section{
+      margin-top: 22px;
+    }
+    .sectionTitle{
+      display:flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .sectionHint{
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Cards grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(17,24,39,.05);
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+    .card p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .chips{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f9fafb;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    /* Skills */
+    .skillsRow{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .skillsRow ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12.5px;
+      display:flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .skillsRow{ grid-template-columns: 1fr; }
+      .top{ align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Top -->
+    <div class="top">
+      <div class="brand">
+        <div class="name">Fernan Joey D. Fronda</div>
+        <div class="role">Entry-Level Web Designer</div>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="heroCard">
+        <h1>Clean layouts. Clear design.</h1>
+        <p class="subtitle">
+          I’m an IT student focused on user interface layout and wireframing using Canva,
+          with foundational knowledge of HTML and CSS for building simple, structured web pages.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="infoList">
+        <div class="infoItem">
+          <div class="infoLabel">Email</div>
+          <div class="infoValue">fernan.fronda.ecoast@panpacificu.edu.ph</div>
+        </div>
+        <div class="infoItem">
+          <div class="infoLabel">Phone</div>
+          <div class="infoValue">0999 853 2262</div>
+        </div>
+        <div class="infoItem">
+          <div class="infoLabel">Location</div>
+          <div class="infoValue">Philippines</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sectionTitle">
+        <h2>About</h2>
+        <div class="sectionHint">Short and professional</div>
+      </div>
+      <div class="card">
+        <p style="margin:0;">
+          I am currently taking Bachelor of Science in Information Technology. I enjoy improving interface
+          layout structure, readability, and visual consistency. My workflow often starts with wireframes in Canva,
+          then I translate designs into basic HTML and CSS pages. I’m continuously learning and improving my front-end skills.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="sectionTitle">
+        <h2>Projects</h2>
+        <div class="sectionHint">Academic projects and UI work</div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Student Calamity Incident Reporting System</h3>
+          <p>
+            Designed wireframes and structured UI layouts for student and admin pages. Focused on usability,
+            clarity, and organized interface presentation.
+          </p>
+          <div class="chips">
+            <span class="chip">Canva</span>
+            <span class="chip">HTML (Foundational)</span>
+            <span class="chip">CSS (Foundational)</span>
+            <span class="chip">UI Layout</span>
+          </div>
+          <p style="margin-top:10px; font-size:12.5px; color:var(--muted);">
+            Tip: Add screenshots later (wireframe + interface).
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Internship Logbook Web Application</h3>
+          <p>
+            Created simple page layouts and organized form components for better readability and user experience.
+            Applied clean spacing and consistent structure.
+          </p>
+          <div class="chips">
+            <span class="chip">HTML (Foundational)</span>
+            <span class="chip">CSS (Foundational)</span>
+            <span class="chip">Form Layout</span>
+          </div>
+          <p style="margin-top:10px; font-size:12.5px; color:var(--muted);">
+            Tip: Add 1–2 screenshots of the UI page.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="sectionTitle">
+        <h2>Skills</h2>
+        <div class="sectionHint">What I use and what I’m learning</div>
+      </div>
+
+      <div class="skillsRow">
+        <div class="card">
+          <h3>Design</h3>
+          <div class="chips">
+            <span class="chip">Canva</span>
+            <span class="chip">Wireframing</span>
+            <span class="chip">Visual Hierarchy</span>
+            <span class="chip">Layout Structuring</span>
+          </div>
+          <ul>
+            <li>Clean spacing and alignment</li>
+            <li>Readable layout structure</li>
+            <li>Consistent interface presentation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Web</h3>
+          <div class="chips">
+            <span class="chip">HTML (Foundational)</span>
+            <span class="chip">CSS (Foundational)</span>
+            <span class="chip">Basic Responsiveness</span>
+          </div>
+          <ul>
+            <li>Page structure and sections</li>
+            <li>Basic styling (spacing, fonts, colors)</li>
+            <li>Simple responsive layout concepts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="sectionTitle">
+        <h2>Contact</h2>
+        <div class="sectionHint">Reach me anytime</div>
+      </div>
+      <div class="card">
+        <p style="margin:0 0 8px;">
+          <strong>Email:</strong> fernan.fronda.ecoast@panpacificu.edu.ph
+        </p>
+        <p style="margin:0 0 8px;">
+          <strong>Phone:</strong> 0999 853 2262
+        </p>
+        <p style="margin:0; color:var(--muted); font-size:13.5px;">
+          You can also add your GitHub link here if you want (optional).
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2026 Fernan Joey D. Fronda</div>
+      <div>Entry-Level Web Designer Portfolio</div>
+    </footer>
+
+  </div>
+</body>
+</html>
