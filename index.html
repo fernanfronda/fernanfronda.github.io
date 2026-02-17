@@ -203,6 +203,30 @@
       color: #374151;
       font-weight: 600;
     }
+    /* Project media */
+.mediaRow{
+  display:flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.mediaCol{
+  flex: 1;
+  min-width: 250px;
+}
+.mediaLabel{
+  font-weight: 700;
+  font-size: 13px;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+.mediaImg{
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
 
     /* Skills */
     .skillsRow{
@@ -303,41 +327,71 @@
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <div class="sectionTitle">
-        <h2>Projects</h2>
-        <div class="sectionHint">Academic projects and UI work</div>
+   <!-- Projects -->
+<section id="projects">
+  <div class="sectionTitle">
+    <h2>Projects</h2>
+    <div class="sectionHint">Academic projects and UI work</div>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Student Calamity Incident Reporting System</h3>
+      <p>
+        Designed wireframes and structured UI layouts for student and admin pages.
+        Focused on usability, clarity, and organized interface presentation.
+      </p>
+
+      <div class="mediaRow">
+        <div class="mediaCol">
+          <p class="mediaLabel">Wireframe</p>
+          <img class="mediaImg" src="wireframe-dashboard.png" alt="Dashboard Wireframe">
+        </div>
+
+        <div class="mediaCol">
+          <p class="mediaLabel">Final UI</p>
+          <img class="mediaImg" src="ui-dashboard.jpg" alt="Dashboard Final UI">
+        </div>
       </div>
 
-      <div class="card">
-  <h3>Student Calamity Incident Reporting System</h3>
-  <p>
-    Designed wireframes and structured UI layouts for student and admin pages.
-    Focused on usability, clarity, and organized interface presentation.
-  </p>
-
-  <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:15px;">
-    <div style="flex:1; min-width:250px;">
-      <p style="font-weight:bold; font-size:13px; margin-bottom:6px;">Wireframe</p>
-      <img src="wireframe-dashboard.png" alt="Dashboard Wireframe"
-           style="width:100%; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+      <div class="chips" style="margin-top:15px;">
+        <span class="chip">Canva</span>
+        <span class="chip">HTML (Foundational)</span>
+        <span class="chip">CSS (Foundational)</span>
+        <span class="chip">UI Layout</span>
+      </div>
     </div>
 
-    <div style="flex:1; min-width:250px;">
-      <p style="font-weight:bold; font-size:13px; margin-bottom:6px;">Final UI</p>
-      <img src="ui-dashboard.jpg" alt="Dashboard Final UI"
-           style="width:100%; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08);">
-    </div>
-  </div>
+    <div class="card">
+      <h3>Internship Logbook Web Application</h3>
+      <p>
+        Designed and structured a simple internship logging interface.
+        Focused on clean spacing, organized data presentation, and user-friendly layout.
+      </p>
 
-  <div class="chips" style="margin-top:15px;">
-    <span class="chip">Canva</span>
-    <span class="chip">HTML (Foundational)</span>
-    <span class="chip">CSS (Foundational)</span>
-    <span class="chip">UI Layout</span>
+      <div class="mediaRow">
+        <div class="mediaCol">
+          <p class="mediaLabel">Wireframe</p>
+          <img class="mediaImg" src="logbook-wireframe.png" alt="Logbook Wireframe">
+        </div>
+
+        <div class="mediaCol">
+          <p class="mediaLabel">Final UI</p>
+          <img class="mediaImg" src="logbook-ui.png" alt="Logbook Final UI">
+        </div>
+      </div>
+
+      <div class="chips" style="margin-top:15px;">
+        <span class="chip">HTML (Foundational)</span>
+        <span class="chip">CSS (Foundational)</span>
+        <span class="chip">Form Layout</span>
+      </div>
+    </div>
+
   </div>
-</div>
+</section>
+
 
 
         <div class="card">
@@ -437,5 +491,6 @@
 </body>
 
 </html>
+
 
 
