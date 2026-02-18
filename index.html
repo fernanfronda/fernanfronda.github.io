@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fernan Joey D. Fronda | Entry-Level Web Designer</title>
+
   <style>
     :root{
       --bg:#ffffff;
@@ -168,20 +169,13 @@
     }
 
     /* Cards grid */
-    .grid,
-    .skillsRow{
-      display: grid;
-      align-items: stretch;
-    }
     .grid{
+      display:grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
+      align-items: stretch;
     }
-    .grid .card,
-    .skillsRow .card{
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+    .grid .card{
       min-height: 0;
     }
     .card{
@@ -190,34 +184,12 @@
       background: var(--card);
       padding: 16px;
       box-shadow: 0 6px 18px rgba(17,24,39,.05);
-    }
-    /* Same size for all card images */
-    .cardImgWrap{
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #f3f4f6;
-      margin-bottom: 12px;
-      flex-shrink: 0;
-    }
-    .cardImgWrap img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* Direct image in card: same size */
-    .card > img{
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      display: block;
+      display:flex;
+      flex-direction:column;
+      height:100%;
     }
     .card h3{
-      margin: 0 0 6px;
+      margin: 0 0 10px;
       font-size: 15px;
     }
     .card p{
@@ -225,6 +197,7 @@
       color: var(--muted);
       font-size: 13.5px;
     }
+
     .chips{
       display:flex;
       flex-wrap: wrap;
@@ -240,11 +213,41 @@
       font-weight: 600;
     }
 
+    /* Project media */
+    .mediaRow{
+      display:flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .mediaCol{
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    .mediaLabel{
+      font-weight: 700;
+      font-size: 13px;
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .mediaImg{
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
     /* Skills */
     .skillsRow{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
+      align-items: stretch;
+    }
+    .skillsRow .card{
+      min-height: 0;
     }
     .skillsRow ul{
       margin: 10px 0 0;
@@ -272,6 +275,7 @@
       .grid{ grid-template-columns: 1fr; }
       .skillsRow{ grid-template-columns: 1fr; }
       .top{ align-items: flex-start; }
+      .mediaImg{ height: 200px; }
     }
   </style>
 </head>
@@ -298,7 +302,7 @@
       <div class="heroCard">
         <h1>Clean layouts. Clear design.</h1>
         <p class="subtitle">
-          I’m an IT student focused on user interface layout and wireframing using Canva,
+          I'm an IT student focused on user interface layout and wireframing using Canva,
           with foundational knowledge of HTML and CSS for building simple, structured web pages.
         </p>
 
@@ -334,7 +338,7 @@
         <p style="margin:0;">
           I am currently taking Bachelor of Science in Information Technology. I enjoy improving interface
           layout structure, readability, and visual consistency. My workflow often starts with wireframes in Canva,
-          then I translate designs into basic HTML and CSS pages. I’m continuously learning and improving my front-end skills.
+          then I translate designs into basic HTML and CSS pages. I'm continuously learning and improving my front-end skills.
         </p>
       </div>
     </section>
@@ -347,38 +351,60 @@
       </div>
 
       <div class="grid">
+
         <div class="card">
           <h3>Student Calamity Incident Reporting System</h3>
           <p>
-            Designed wireframes and structured UI layouts for student and admin pages. Focused on usability,
-            clarity, and organized interface presentation.
+            Designed wireframes and structured UI layouts for student and admin pages.
+            Focused on usability, clarity, and organized interface presentation.
           </p>
-          <div class="chips">
+
+          <div class="mediaRow">
+            <div class="mediaCol">
+              <p class="mediaLabel">Wireframe</p>
+              <img class="mediaImg" src="wireframe-dashboard.png" alt="Dashboard Wireframe">
+            </div>
+
+            <div class="mediaCol">
+              <p class="mediaLabel">Final UI</p>
+              <img class="mediaImg" src="ui-dashboard.jpg" alt="Dashboard Final UI">
+            </div>
+          </div>
+
+          <div class="chips" style="margin-top:15px;">
             <span class="chip">Canva</span>
             <span class="chip">HTML (Foundational)</span>
             <span class="chip">CSS (Foundational)</span>
             <span class="chip">UI Layout</span>
           </div>
-          <p style="margin-top:10px; font-size:12.5px; color:var(--muted);">
-            Tip: Add screenshots later (wireframe + interface).
-          </p>
         </div>
 
         <div class="card">
           <h3>Internship Logbook Web Application</h3>
           <p>
-            Created simple page layouts and organized form components for better readability and user experience.
-            Applied clean spacing and consistent structure.
+            Designed and structured a simple internship logging interface.
+            Focused on clean spacing, organized data presentation, and user-friendly layout.
           </p>
-          <div class="chips">
+
+          <div class="mediaRow">
+            <div class="mediaCol">
+              <p class="mediaLabel">Wireframe</p>
+              <img class="mediaImg" src="logbook-wireframe.png" alt="Logbook Wireframe">
+            </div>
+
+            <div class="mediaCol">
+              <p class="mediaLabel">Final UI</p>
+              <img class="mediaImg" src="logbook-ui.png" alt="Logbook Final UI">
+            </div>
+          </div>
+
+          <div class="chips" style="margin-top:15px;">
             <span class="chip">HTML (Foundational)</span>
             <span class="chip">CSS (Foundational)</span>
             <span class="chip">Form Layout</span>
           </div>
-          <p style="margin-top:10px; font-size:12.5px; color:var(--muted);">
-            Tip: Add 1–2 screenshots of the UI page.
-          </p>
         </div>
+
       </div>
     </section>
 
@@ -386,7 +412,7 @@
     <section id="skills">
       <div class="sectionTitle">
         <h2>Skills</h2>
-        <div class="sectionHint">What I use and what I’m learning</div>
+        <div class="sectionHint">What I use and what I'm learning</div>
       </div>
 
       <div class="skillsRow">
@@ -448,3 +474,4 @@
   </div>
 </body>
 </html>
+
